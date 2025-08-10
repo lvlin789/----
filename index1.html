@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Aktieanalys Pro - Framtidens investeringsplattform</title>
+    <meta name="description" content="Professionell AI-aktieteknisk analys med hög framgångsgrad. Gå med i vårt WhatsApp-community för kvalitativa aktierekommendationer.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ai-blue': '#00D4FF',
+                        'ai-purple': '#7C3AED',
+                        'ai-cyan': '#06B6D4',
+                        'ai-indigo': '#4F46E5',
+                        'ai-dark': '#0F172A',
+                        'ai-gray': '#1E293B',
+                        'ai-light': '#E2E8F0'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .ai-gradient-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+        }
+        .ai-hero-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .ai-hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .floating-animation {
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(1deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+            75% { transform: translateY(-15px) rotate(0.5deg); }
+        }
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite alternate;
+        }
+        @keyframes pulse-glow {
+            from { 
+                box-shadow: 0 0 30px rgba(0, 212, 255, 0.6),
+                           0 0 60px rgba(124, 58, 237, 0.4);
+            }
+            to { 
+                box-shadow: 0 0 50px rgba(0, 212, 255, 0.8),
+                           0 0 100px rgba(124, 58, 237, 0.6);
+            }
+        }
+        .success-rate {
+            background: linear-gradient(45deg, #00D4FF, #7C3AED, #06B6D4);
+            background-size: 200% 200%;
+            animation: gradient-shift 4s ease-in-out infinite;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .tech-border {
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #00D4FF, #7C3AED, #06B6D4) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+        .ai-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .ai-button {
+            background: linear-gradient(45deg, #00D4FF, #7C3AED);
+            transition: all 0.3s ease;
+        }
+        .ai-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+        .matrix-bg {
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+        }
+        .ai-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #00D4FF, #7C3AED);
+            padding: 4px;
+        }
+        .ai-image-container img {
+            border-radius: 16px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .ai-stats {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.1));
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="font-['Inter'] bg-ai-dark text-white">
+    <!-- Header -->
+    <header class="bg-ai-dark/90 backdrop-blur-md border-b border-ai-blue/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-ai-blue to-ai-purple rounded-xl flex items-center justify-center pulse-glow">
+                        <span class="text-white font-bold text-2xl">🤖</span>
+                    </div>
+                    <span class="ml-4 text-2xl font-bold bg-gradient-to-r from-ai-blue to-ai-purple bg-clip-text text-transparent">
+                        AI Aktieanalys Pro
+                    </span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-ai-light hover:text-ai-blue transition-colors font-medium">Funktioner</a>
+                    <a href="#community" class="text-ai-light hover:text-ai-blue transition-colors font-medium">Community</a>
+                    <a href="#join" class="ai-button text-white px-6 py-3 rounded-xl font-semibold">Gå med nu</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="ai-hero-bg relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-white">
+                    <div class="inline-flex items-center space-x-3 bg-gradient-to-r from-ai-blue/20 to-ai-purple/20 border border-ai-blue/30 text-ai-blue px-6 py-3 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
+                        <span class="animate-pulse">🚀</span>
+                        <span>AI-Powered Aktieanalys</span>
+                        <span class="animate-pulse">🚀</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
+                        <span class="bg-gradient-to-r from-ai-blue via-ai-purple to-ai-cyan bg-clip-text text-transparent">
+                            Gå med oss
+                        </span>
+                        <br>
+                        <span class="text-white">
+                            Aktieanalys/Aktiestrategi/
+                        </span>
+                        <span class="bg-gradient-to-r from-ai-blue to-ai-purple bg-clip-text text-transparent">
+                            AI-aktierekommendationer
+                        </span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-ai-light leading-relaxed mb-10">
+                        Många vet inte hur man väljer aktier och bara följer trenden. Att investera är dock inte hasardspel. Även om aktiemarknadshandel kan verka enkelt kan det vara en utmaning att hitta rätt ingångspunkt utan en beprövad strategi.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <button class="ai-button text-white px-10 py-5 rounded-2xl text-xl font-bold pulse-glow">
+                            ❤️ Gå med i WhatsApp-gruppen nu! ❤️
+                        </button>
+                        <button class="border-2 border-ai-blue text-ai-blue px-10 py-5 rounded-2xl text-xl font-semibold hover:bg-ai-blue hover:text-white transition-all duration-300">
+                            Läs mer
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="floating-animation">
+                        <div class="ai-image-container w-96 h-96 mx-auto shadow-2xl">
+                            <img src="/image/image0.png" alt="AI Aktieanalys" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-ai-blue to-ai-purple text-white px-4 py-2 rounded-full font-bold text-sm">
+                            AI Powered
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Rate Section -->
+    <section class="py-20 bg-ai-gray matrix-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="success-rate p-12 rounded-3xl text-white shadow-2xl relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20 rounded-3xl"></div>
+                <div class="relative z-10">
+                    <h2 class="text-5xl md:text-6xl font-black mb-6 glow-text">
+                        📊 Hög framgångsgrad
+                    </h2>
+                    <div class="text-8xl md:text-9xl font-black text-yellow-300 mb-6 glow-text">
+                        255%
+                    </div>
+                    <p class="text-2xl text-ai-light">
+                        Fantastisk ökning med vår AI-aktietekniska analys
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-ai-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-8 glow-text">
+                    Klicka för att gå med: Våra exklusiva erbjudanden
+                </h2>
+                <p class="text-xl text-ai-light max-w-4xl mx-auto">
+                    Få tillgång till professionell vägledning och exklusiv aktieinformation
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="ai-card p-8 rounded-2xl group hover:scale-105 transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-ai-blue to-ai-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-3xl font-bold">1️⃣</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-ai-blue">Bygg din egen portfölj med hög utdelning gratis</h3>
+                    <p class="text-ai-light">Lär dig att skapa en balanserad portfölj som ger dig stadig inkomst över tid.</p>
+                </div>
+                
+                <div class="ai-card p-8 rounded-2xl group hover:scale-105 transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-ai-purple to-ai-cyan rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-3xl font-bold">2️⃣</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-ai-purple">Dela 1-3 vinnande aktier dagligen</h3>
+                    <p class="text-ai-light">Få handplockade rekommendationer baserade på djupgående marknadsanalys.</p>
+                </div>
+                
+                <div class="ai-card p-8 rounded-2xl group hover:scale-105 transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-ai-cyan to-ai-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-3xl font-bold">3️⃣</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-ai-cyan">Gratis handledning i "Candlestick Chart"</h3>
+                    <p class="text-ai-light">Lär dig att läsa och tolka ljusstakar för bättre handelsbeslut.</p>
+                </div>
+                
+                <div class="ai-card p-8 rounded-2xl group hover:scale-105 transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-ai-blue to-ai-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-3xl font-bold">4️⃣</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-ai-blue">Konsultera en expert idag</h3>
+                    <p class="text-ai-light">Har du investeringsfrågor? Våra experter är här för att hjälpa dig.</p>
+                </div>
+                
+                <div class="ai-card p-8 rounded-2xl group hover:scale-105 transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-ai-purple to-ai-cyan rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-3xl font-bold">5️⃣</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-ai-purple">Exklusiv undervisning i teknisk aktieanalys</h3>
+                    <p class="text-ai-light">Hög framgångsgrad med våra beprövade analysmetoder.</p>
+                </div>
+                
+                <div class="ai-card p-8 rounded-2xl group hover:scale-105 transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-ai-cyan to-ai-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-white text-3xl font-bold">6️⃣</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-ai-cyan">Exitstrategi och snabb stop loss</h3>
+                    <p class="text-ai-light">Skydda dina vinster och begränsa förluster med professionella strategier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Expert Section -->
+    <section class="py-24 bg-ai-gray matrix-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="ai-card p-10 rounded-3xl relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-ai-blue/10 to-ai-purple/10"></div>
+                        <div class="relative z-10">
+                            <h2 class="text-4xl md:text-5xl font-black mb-8 text-ai-blue glow-text">
+                                Professionell AI-aktieteknisk analys
+                            </h2>
+                            <p class="text-xl text-ai-light mb-8 leading-relaxed">
+                                Denna WhatsApp specialiserar sig på aktieanalys. Gå med idag och lär dig hur du investerar bättre!
+                            </p>
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-8 h-8 bg-gradient-to-r from-ai-blue to-ai-purple rounded-full flex items-center justify-center">
+                                        <span class="text-white text-sm font-bold">AI</span>
+                                    </div>
+                                    <span class="text-ai-light text-lg">Avancerad algoritmisk analys</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-8 h-8 bg-gradient-to-r from-ai-purple to-ai-cyan rounded-full flex items-center justify-center">
+                                        <span class="text-white text-sm font-bold">📊</span>
+                                    </div>
+                                    <span class="text-ai-light text-lg">Teknisk analys med hög precision</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-8 h-8 bg-gradient-to-r from-ai-cyan to-ai-blue rounded-full flex items-center justify-center">
+                                        <span class="text-white text-sm font-bold">🎯</span>
+                                    </div>
+                                    <span class="text-ai-light text-lg">Beprövade strategier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 text-center">
+                    <div class="relative inline-block">
+                        <div class="ai-image-container w-80 h-80 mx-auto shadow-2xl relative">
+                            <img src="/image/image1.png" alt="AI Expert" class="w-full h-full object-cover">
+                            <div class="absolute -bottom-4 -right-4 bg-gradient-to-r from-ai-blue to-ai-purple text-white px-6 py-3 rounded-full font-bold text-lg">
+                                AI Expert
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-black text-ai-blue mt-8 glow-text">AI-aktieanalys Expert</h3>
+                    <p class="text-ai-light text-xl mt-4">Professionell vägledning med hög framgångsgrad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Opportunity Section -->
+    <section class="py-24 bg-gradient-to-r from-ai-dark to-ai-gray">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="ai-card p-12 rounded-3xl border-2 border-ai-blue/30 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-ai-blue/5 to-ai-purple/5"></div>
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-black mb-8 text-ai-blue glow-text">
+                        🎉 SÄRSKILD MÖJLIGHET
+                    </h2>
+                    <p class="text-xl text-ai-light leading-relaxed mb-10 max-w-4xl mx-auto">
+                        Om du har erfarenhet av att investera i aktier, lägg bara till vårt WhatsApp-nummer! Min assistent kommer att koppla dig direkt till vårt expertkonto, vilket ger dig tillgång till professionell vägledning och exklusiv aktieinformation som hjälper dig att utnyttja de bästa investeringsmöjligheterna.
+                    </p>
+                    
+                    <div class="ai-stats p-8 rounded-2xl mt-10">
+                        <h3 class="text-2xl font-bold mb-6 text-ai-blue">Vad du får:</h3>
+                        <div class="grid md:grid-cols-2 gap-6 text-left">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-ai-blue text-2xl">✓</span>
+                                <span class="text-ai-light text-lg">Direkt koppling till expertkonto</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-ai-blue text-2xl">✓</span>
+                                <span class="text-ai-light text-lg">Professionell vägledning</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-ai-blue text-2xl">✓</span>
+                                <span class="text-ai-light text-lg">Exklusiv aktieinformation</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-ai-blue text-2xl">✓</span>
+                                <span class="text-ai-light text-lg">Bästa investeringsmöjligheter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp CTA Section -->
+    <section id="join" class="py-24 bg-gradient-to-br from-green-600 to-green-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="ai-card p-16 rounded-3xl">
+                <div class="flex items-center justify-center mb-8">
+                    <span class="text-6xl mr-6">📱</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white">
+                        Gå med i vårt WhatsApp-community nu!
+                    </h2>
+                </div>
+                
+                <p class="text-xl text-ai-light mb-10 max-w-3xl mx-auto">
+                    Få tillgång till kvalitativa aktierekommendationer och professionell vägledning direkt på din telefon.
+                </p>
+                
+                <div class="bg-green-100/20 border-2 border-green-300/30 rounded-2xl p-8 mb-10 backdrop-blur-sm">
+                    <div class="flex items-center justify-center space-x-4 mb-6">
+                        <span class="text-3xl">💬</span>
+                        <span class="text-2xl font-bold text-green-200">WhatsApp Community</span>
+                    </div>
+                    <p class="text-green-100 text-lg">
+                        Anslut dig till andra investerare och få dagliga uppdateringar om marknadsutveckling.
+                    </p>
+                </div>
+                
+                <button class="ai-button text-white px-16 py-8 rounded-3xl text-3xl font-black hover:scale-105 transition-all duration-300 shadow-2xl">
+                    📱 Gå med i WhatsApp-gruppen nu!
+                </button>
+                
+                <p class="text-sm text-green-200 mt-8">
+                    * Gratis att gå med. Få kvalitativa aktierekommendationer direkt på din telefon.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ai-dark border-t border-ai-blue/20 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-ai-blue to-ai-purple rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold text-2xl">🤖</span>
+                        </div>
+                        <span class="ml-4 text-2xl font-bold bg-gradient-to-r from-ai-blue to-ai-purple bg-clip-text text-transparent">
+                            AI Aktieanalys Pro
+                        </span>
+                    </div>
+                    <p class="text-ai-light text-lg">
+                        Ditt betrodda community för AI-aktieanalys och professionell vägledning.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-ai-blue">Tjänster</h3>
+                    <ul class="space-y-3 text-ai-light">
+                        <li><a href="#" class="hover:text-ai-blue transition-colors">AI-aktieanalys</a></li>
+                        <li><a href="#" class="hover:text-ai-blue transition-colors">Teknisk analys</a></li>
+                        <li><a href="#" class="hover:text-ai-blue transition-colors">Portföljstrategier</a></li>
+                        <li><a href="#" class="hover:text-ai-blue transition-colors">Riskhantering</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-ai-purple">Utbildning</h3>
+                    <ul class="space-y-3 text-ai-light">
+                        <li><a href="#" class="hover:text-ai-purple transition-colors">Candlestick Chart</a></li>
+                        <li><a href="#" class="hover:text-ai-purple transition-colors">Aktiestrategier</a></li>
+                        <li><a href="#" class="hover:text-ai-purple transition-colors">Marknadsanalys</a></li>
+                        <li><a href="#" class="hover:text-ai-purple transition-colors">Webinarier</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-ai-cyan">Kontakt</h3>
+                    <ul class="space-y-3 text-ai-light">
+                        <li class="flex items-center space-x-2">
+                            <span>📱</span>
+                            <span>WhatsApp Community</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span>📧</span>
+                            <span>support@aktieanalys.se</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span>🌍</span>
+                            <span>Stockholm, Sverige</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-ai-blue/20 mt-16 pt-12 text-center">
+                <p class="text-ai-light mb-4">
+                    &copy; 2024 AI Aktieanalys Pro. Alla rättigheter förbehållna. | 
+                    <a href="#" class="hover:text-ai-blue transition-colors">Integritetspolicy</a> | 
+                    <a href="#" class="hover:text-ai-blue transition-colors">Användarvillkor</a>
+                </p>
+                <p class="text-sm text-ai-light/70">
+                    Investeringar innebär risk. Tidigare resultat garanterar inte framtida avkastning. 
+                    Konsultera alltid en finansiell rådgivare innan du investerar.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-ai-dark/95');
+            } else {
+                header.classList.remove('bg-ai-dark/95');
+            }
+        });
+
+        // WhatsApp button functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('WhatsApp')) {
+                button.addEventListener('click', function() {
+                    // Replace with actual WhatsApp number
+                    const whatsappNumber = '+46701234567';
+                    const message = 'Hej! Jag vill gå med i ert WhatsApp-community för aktieanalys.';
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+        });
+
+        // Add parallax effect to matrix background
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const matrixElements = document.querySelectorAll('.matrix-bg');
+            matrixElements.forEach(element => {
+                const speed = scrolled * 0.5;
+                element.style.transform = `translateY(${speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

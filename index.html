@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heta Aktier - Gå med i vårt investeringscommunity</title>
+    <meta name="description" content="Upptäck de hetaste aktierna för andra halvan av året. Gå med i vårt community och få dagliga rekommendationer på högkvalitativa aktier.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'swedish-blue': '#006AA7',
+                        'swedish-yellow': '#FECC00',
+                        'swedish-green': '#006B3F',
+                        'swedish-red': '#C8102E'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #006AA7 0%, #006B3F 100%);
+        }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 20px rgba(254, 204, 0, 0.5); }
+            to { box-shadow: 0 0 30px rgba(254, 204, 0, 0.8); }
+        }
+    </style>
+</head>
+
+<body class="font-['Inter'] bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-swedish-blue to-swedish-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">💰</span>
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-gray-900">Heta Aktier</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#features" class="text-gray-600 hover:text-swedish-blue transition-colors">Funktioner</a>
+                    <a href="#community" class="text-gray-600 hover:text-swedish-blue transition-colors">Community</a>
+                    <a href="#join" class="bg-swedish-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Gå med nu</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="inline-flex items-center space-x-2 bg-yellow-400 bg-opacity-20 text-yellow-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <span class="animate-pulse">🔥</span>
+                        <span>De hetaste aktierna för andra halvan av året är här!</span>
+                        <span class="animate-pulse">🔥</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Gå med i vårt 
+                        <span class="text-yellow-300">investeringscommunity</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-blue-100 leading-relaxed mb-8">
+                        Varje dag väljer vi ut 3 potentiella aktier åt dig, med rekommendationer på högkvalitativa aktier med låg risk och hög avkastning – för att hjälpa dig förverkliga dina investeringsdrömmar!
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-all transform hover:scale-105 pulse-glow">
+                            Gå med nu - Begränsat till 100 deltagare!
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-swedish-blue transition-all">
+                            Läs mer
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="floating-animation">
+                        <div class="w-80 h-80 bg-gradient-to-br from-swedish-blue to-swedish-green rounded-full mx-auto shadow-2xl flex items-center justify-center">
+                            <!-- <span class="text-white text-6xl">📈</span> -->
+                            <img src="/image/ava01.png" alt="Heta Aktier" class="w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="bg-gradient-to-r from-swedish-green to-swedish-blue p-8 rounded-2xl text-white">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                            Exklusiv insiderinformation från aktiemarknaden
+                        </h2>
+                        <p class="text-xl text-blue-100 mb-6">
+                            Institutionella investerare köper tyst upp dessa aktier – och du kanske fortfarande är ovetande?
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+                                    <span class="text-swedish-green text-sm font-bold">1</span>
+                                </div>
+                                <span>Institutionella investerare köper tyst</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+                                    <span class="text-swedish-green text-sm font-bold">2</span>
+                                </div>
+                                <span>Exklusiv tillgång till marknadsinsider</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+                                    <span class="text-swedish-green text-sm font-bold">3</span>
+                                </div>
+                                <span>Fördelar som vanliga investerare missar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 text-center">
+                    <div class="relative inline-block">
+                        <div class="w-64 h-64 bg-gradient-to-br from-swedish-blue to-swedish-green rounded-full mx-auto shadow-2xl flex items-center justify-center">
+                            <!-- <span class="text-white text-4xl">👨‍💼</span> -->
+                            <img src="/image/ava02.jpg" alt="Heta Aktier" class="w-auto h-auto rounded-2xl">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-swedish-green px-4 py-2 rounded-full font-bold">
+                            Expert
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-6">Arne Kavastu Talving</h3>
+                    <p class="text-gray-600">Finansiell expert & Community-ledare</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                    Vårt uppdrag
+                </h2>
+                <p class="text-xl text-gray-600 leading-relaxed mb-12">
+                    Jag skapade detta community för att ta tillbaka de möjligheter vi förlorat och försvara våra rättvisa intressen på marknaden. Detta är ett offentligt kunskapsdelningscommunity för alla handlare, investerare, aktieentusiaster och yrkesverksamma inom finanssektorn.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mt-16">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="w-16 h-16 bg-swedish-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl">🎯</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Ta tillbaka möjligheter</h3>
+                        <p class="text-gray-600">Vi hjälper dig att identifiera och agera på investeringsmöjligheter som institutionella investerare redan har upptäckt.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="w-16 h-16 bg-swedish-green rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl">🤝</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Kunskapsdelning</h3>
+                        <p class="text-gray-600">Ett community där alla kan lära av varandra och dela erfarenheter för att förbättra sina investeringsresultat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Kraftiga marknadssvängningar? Identifiera omedelbart din ekonomiska risk!
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Vi erbjuder dig verktyg och insikter för att navigera i volatila marknader och skydda dina investeringar.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-swedish-blue to-swedish-green p-8 rounded-2xl text-white">
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-swedish-blue text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Dagligen gratis urval av 3 högkvalitativa aktier</h3>
+                    <p class="text-blue-100">Få handplockade rekommendationer baserade på djupgående analys och marknadsinsikter.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-swedish-green to-swedish-blue p-8 rounded-2xl text-white">
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-swedish-blue text-2xl">🔍</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Experter analyserar gratis om dina tillgångar</h3>
+                    <p class="text-blue-100">Få professionell bedömning av risknivån i din portfölj och strategier för optimering.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-swedish-blue to-swedish-green p-8 rounded-2xl text-white">
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-swedish-blue text-2xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Realtidsinformation från marknadens insida</h3>
+                    <p class="text-blue-100">Få tillgång till information som hjälper dig att minska investeringsrisk och agera snabbt.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-swedish-green to-swedish-blue p-8 rounded-2xl text-white">
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-swedish-blue text-2xl">📈</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Djupgående analys från sex nyckelperspektiv</h3>
+                    <p class="text-blue-100">Omfattande utvärdering av varje aktie för att säkerställa kvalitet och potential.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-swedish-blue to-swedish-green p-8 rounded-2xl text-white">
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-swedish-blue text-2xl">🔐</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Avslöja hemligheterna bakom varje aktie</h3>
+                    <p class="text-blue-100">Få insikter som vanliga investerare inte har tillgång till.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-swedish-green to-swedish-blue p-8 rounded-2xl text-white">
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-swedish-blue text-2xl">💡</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Gratis handelstips och strategier</h3>
+                    <p class="text-blue-100">Lär dig av experter och få praktiska råd för att förbättra dina investeringsresultat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-gradient-to-r from-swedish-blue to-swedish-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                Gå med i vårt community nu för att få mer detaljerade investeringsstrategier och gratis handelstips!
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mt-16">
+                <div class="text-left">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-swedish-blue text-sm font-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Exklusiv tillgång</h3>
+                                <p class="text-blue-100">Få tillgång till information och analyser som inte är tillgängliga för allmänheten.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-swedish-blue text-sm font-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Expert community</h3>
+                                <p class="text-blue-100">Koppla dig med andra investerare och lära av deras erfarenheter och strategier.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-swedish-blue text-sm font-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Dagliga uppdateringar</h3>
+                                <p class="text-blue-100">Få regelbundna uppdateringar om marknadsutveckling och nya möjligheter.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="relative inline-block">
+                        <div class="w-64 h-64 bg-gradient-to-br from-swedish-blue to-swedish-green rounded-full mx-auto shadow-2xl flex items-center justify-center">
+                            <span class="text-white text-4xl">👥</span>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-swedish-blue px-4 py-2 rounded-full font-bold">
+                            Medlem
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="join" class="py-20 bg-yellow-400">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white p-12 rounded-3xl shadow-2xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    ⚠️ Det här är en sällsynt möjlighet – institutionella investerare väntar inte!
+                </h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Begränsat till de första 100 deltagarna! Gå med nu innan det är för sent.
+                </p>
+                
+                <div class="bg-red-100 border-2 border-red-300 rounded-xl p-6 mb-8">
+                    <div class="flex items-center justify-center space-x-3 mb-4">
+                        <span class="text-2xl">⏰</span>
+                        <span class="text-xl font-semibold text-red-800">Begränsat erbjudande</span>
+                    </div>
+                    <p class="text-red-700">
+                        Endast 100 platser tillgängliga. När de är fyllda stänger vi community:t för nya medlemmar.
+                    </p>
+                </div>
+                
+                <button class="bg-gradient-to-r from-swedish-blue to-swedish-green text-white px-12 py-6 rounded-2xl text-2xl font-bold hover:from-blue-700 hover:to-green-700 transition-all transform hover:scale-105 shadow-2xl">
+                    Gå med i community:t nu!
+                </button>
+                
+                <p class="text-sm text-gray-500 mt-6">
+                    * Gratis att gå med. Inga dolda avgifter eller bindningstid.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-swedish-blue to-swedish-green rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">💰</span>
+                        </div>
+                        <span class="ml-3 text-xl font-bold">Heta Aktier</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Ditt betrodda community för investeringsinsikter och strategier.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Community</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Om oss</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Våra experter</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success stories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resurser</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Investeringsguide</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Marknadsanalys</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Riskhantering</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blogg</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>support@hetaaktier.se</li>
+                        <li>+46 8 123 45 67</li>
+                        <li>Stockholm, Sverige</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Heta Aktier. Alla rättigheter förbehållna. | <a href="#" class="hover:text-white transition-colors">Integritetspolicy</a> | <a href="#" class="hover:text-white transition-colors">Användarvillkor</a></p>
+                <p class="mt-2 text-sm">
+                    Investeringar innebär risk. Tidigare resultat garanterar inte framtida avkastning. 
+                    Konsultera alltid en finansiell rådgivare innan du investerar.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                header.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html>
