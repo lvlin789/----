@@ -515,13 +515,11 @@
 
         // WhatsApp button functionality
         document.querySelectorAll('button').forEach(button => {
-            if (button.textContent.includes('WhatsApp')) {
+            if (button.textContent.includes('WhatsApp') || button.textContent.includes('Gå med')) {
                 button.addEventListener('click', function() {
-                    // Replace with actual WhatsApp number
-                    const whatsappNumber = '+46701234567';
-                    const message = 'Hej! Jag vill gå med i ert WhatsApp-community för aktieanalys.';
-                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-                    window.open(whatsappUrl, '_blank');
+                    // WhatsApp group link for AI page
+                    const whatsappGroupUrl = 'https://chat.whatsapp.com/IZddYUwUCjp8cSH4Bf4Ihr';
+                    window.open(whatsappGroupUrl, '_blank');
                 });
             }
         });

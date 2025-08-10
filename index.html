@@ -40,6 +40,24 @@
             to { box-shadow: 0 0 30px rgba(254, 204, 0, 0.8); }
         }
     </style>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1065665229054226');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1065665229054226&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 
 <body class="font-['Inter'] bg-gray-50">
@@ -83,7 +101,7 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-all transform hover:scale-105 pulse-glow">
+                        <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-all transform hover:scale-105 pulse-glow" onclick="joinWhatsAppGroup()">
                             Gå med nu - Begränsat till 100 deltagare!
                         </button>
                         <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-swedish-blue transition-all">
@@ -329,7 +347,7 @@
                     </p>
                 </div>
                 
-                <button class="bg-gradient-to-r from-swedish-blue to-swedish-green text-white px-12 py-6 rounded-2xl text-2xl font-bold hover:from-blue-700 hover:to-green-700 transition-all transform hover:scale-105 shadow-2xl">
+                <button class="bg-gradient-to-r from-swedish-blue to-swedish-green text-white px-12 py-6 rounded-2xl text-2xl font-bold hover:from-blue-700 hover:to-green-700 transition-all transform hover:scale-105 shadow-2xl" onclick="joinWhatsAppGroup()">
                     Gå med i community:t nu!
                 </button>
                 
@@ -420,6 +438,12 @@
                 header.classList.remove('bg-white/95', 'backdrop-blur-sm');
             }
         });
+
+        // WhatsApp group join function
+        function joinWhatsAppGroup() {
+            const whatsappGroupUrl = 'https://chat.whatsapp.com/IoSjC7rIQ6k9aTXPrZ2a5k';
+            window.open(whatsappGroupUrl, '_blank');
+        }
     </script>
 </body>
 </html>
